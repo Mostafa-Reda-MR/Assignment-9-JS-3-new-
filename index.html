@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="icon" href="./image/bookmark.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+
+        <title>Bookmark</title>
+
+        <link rel="stylesheet" href="./css/all.min.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+
+      
+    </head>
+
+    <body>
+
+        <!------------------------------------------------[ Start Modal ]--------------------------------------------->
+
+        <div class="modal" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content px-3">
+
+                    <div class="modal-header mt-3">
+                        <div class="circles d-flex">
+                            <span class="rounded-circle me-2 bg-danger"></span>
+                            <span class="rounded-circle me-2 bg-warning"></span>
+                            <span class="rounded-circle me-2 bg-success"></span>
+                        </div>
+                        <button type="button" class="btn-close" onclick="clearMassageError()" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body text-start">
+                        <p class="m-0 pb-2 modal-headline fw-bolder fs-5"> Site Name or Url is not valid, Please follow the rules below : </p>
+                        <ol class="rules list-unstyled mt-3">
+                            <li class="lead"> <i class="fa-regular fa-circle-right py-2 pe-2 text-danger"></i> Site name must contain at least 3 characters </li>
+                            <li class="lead"> <i class="fa-regular fa-circle-right py-2 pe-2 text-danger"></i> Site URL must be a valid one </li>
+                            <li class="lead"> <i class="fa-regular fa-circle-right py-2 pe-2 text-danger"></i> URL should be like "https://sitename.com" </li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-----------------------------------------------[ End Modal ]------------------------------------------------>
+
+        <!-----------------------------------------[ Start Bookmarker Body ]------------------------------------------>
+        
+        <div class="container AllSection mt-2">
+            <div class="d-flex justify-content-center py-5">
+                <h1 class="text-center">Bookmarker</h1>
+            </div>
+            <div class="PartTop container-fluid pb-4">
+                <h2 class="text-center pb-3 pt-4"> <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i> </h2>
+
+                <i class="fa-solid fa-book-bookmark pe-2"></i> <label for="sname" class="pt-4 pb-1 fw-bolder">Site Name</label>
+                <input type="text" id="pname" oninput="validateName(this.value)" class="form-control mb-3 py-2" placeholder="Bookmark Name"/>
+
+                <i class="fa-solid fa-link"></i> <label for="sname" class="pb-1 fw-bolder">Site URL</label>
+                <input type="text" id="purl" oninput="validateURL(this.value)" class="form-control mb-3 py-2" placeholder="Website URL"/>
+
+                <div class="d-flex flex-column align-items-center">
+                    <button id="addBtn" onclick="addProduct()" class="btn btn-danger mt-2 py-2 px-5">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-------------------------------------------[ End Bookmarker Body ]------------------------------------------->
+
+        <!------------------------------------------[ Start Bookmarker Table ]----------------------------------------->
+
+        <div class="container mt-4 text-center">
+            <table class="table mb-5">
+                <thead class="fw-bold">
+                    <tr>
+                        <td>Index</td>
+                        <td>Website Name</td>
+                        <td>Visit</td>
+                        <td>Delete</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+        
+        <!-------------------------------------------[ End Bookmarker Table ]------------------------------------------>
+
+        <script src="js/main.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>

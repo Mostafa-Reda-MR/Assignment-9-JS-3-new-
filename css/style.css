@@ -1,0 +1,50 @@
+a{
+    color: black;
+    text-decoration: none;
+}
+
+body{
+    background-color: #F7ECDE;
+}
+
+.modal{
+    background-color: rgba(0 , 0 , 0 , 0.5);
+}
+
+.modal-header .circles span{
+    width: 18px;
+    height: 18px;
+}
+
+h1{
+    font-size: 50px;
+    font-family: 'Pacifico', cursive;
+    position: relative;
+}
+
+h1::before{
+    content: "";
+    z-index: -555;
+    position: absolute;
+    background-color: #FEC260;
+    width: 265px;
+    height: 20px;
+    bottom: 0px;
+    left: 0px;
+    transition: height 0.4s;
+}
+
+h1:hover::before{
+    height: 40px;
+}
+
+h2{
+    font-size: 25px;
+    color: rgb(3, 186, 43);
+    font-family: 'Righteous', sans-serif;
+}
+
+.PartTop{
+    border-top: #000 1px dashed;
+    border-bottom: #000 1px dashed;
+}
